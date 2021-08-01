@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "760460899392",
+    "firebase_url": "https://lucc-community-app-default-rtdb.firebaseio.com",
+    "project_id": "lucc-community-app",
+    "storage_bucket": "lucc-community-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760460899392:android:63f29aa2cfb09a2b855ba5",
+        "android_client_info": {
+          "package_name": "com.shieldsoft.lucc_community"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "760460899392-7rocia08i7f2f5kooqal3jion49eoepi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shieldsoft.lucc_community",
+            "certificate_hash": "50b04f9d57a6a94475990838f378e72322ee4955"
+          }
+        },
+        {
+          "client_id": "760460899392-l9nmpk2um2oi16k518snbnhjnunn6i2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3fPyTiYojtQmoohHzFcvwqe6DFFSyGE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "760460899392-l9nmpk2um2oi16k518snbnhjnunn6i2a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

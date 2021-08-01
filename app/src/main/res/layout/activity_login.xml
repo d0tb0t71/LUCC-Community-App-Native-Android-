@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    tools:context=".LoginActivity">
+
+
+    <TextView
+        android:id="@+id/tt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#3397CB"
+        android:padding="5dp"
+        android:text="Login"
+        android:textAllCaps="true"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:id="@+id/login_lucc_logo"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/tt3"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/lu_lucc" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_login_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_lucc_logo"
+        android:layout_margin="5dp"
+        android:hint="Email"
+        app:endIconMode="clear_text"
+        app:helperText="Required"
+        app:helperTextTextColor="#FF0000"
+        app:startIconDrawable="@drawable/user_icon"
+
+
+        >
+
+        <EditText
+            android:id="@+id/LEmailEDT"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/edit_text_background"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_login_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_input_layout_login_email"
+        android:layout_margin="5dp"
+        android:hint="Password"
+        app:counterEnabled="true"
+        app:counterMaxLength="12"
+        app:endIconMode="password_toggle"
+        app:helperText="Required"
+        app:helperTextTextColor="#FF0000"
+        app:startIconDrawable="@drawable/lock_icon"
+
+
+
+        >
+
+        <EditText
+            android:id="@+id/LPassEDT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/LEmailEDT"
+            android:inputType="textPassword"
+
+            android:background="@drawable/edit_text_background"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_input_layout_login_pass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Login"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_btn"
+        android:layout_centerHorizontal="true"
+        android:text="Forgotten Password ?" />
+
+    <Button
+        android:id="@+id/recover_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tt4"
+        android:layout_centerHorizontal="true"
+        android:text="Recover Now" />
+
+
+    <Button
+        android:id="@+id/register_now_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Not Registered ? Register Now" />
+
+
+</RelativeLayout>
