@@ -16,6 +16,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -100,8 +105,38 @@ public class RegisterActivity extends AppCompatActivity {
 
                     if (task.isSuccessful()) {
 
+
+                        FirebaseUser user=mAuth.getCurrentUser();
+
+                        String email=user.getEmail();
+                        String uid= user.getUid();
+
+
+                        HashMap<Object ,String> hashMap = new HashMap<>();
+
+                        hashMap.put("email",email);
+                        hashMap.put("uid",uid);
+                        hashMap.put("name","Unknown");
+                        hashMap.put("phone","+880**********");
+                        hashMap.put("image","");
+                        hashMap.put("lu_id","********");
+                        hashMap.put("blood_group","No Info");
+                        hashMap.put("section","No Info");
+                        hashMap.put("batch","No Info");
+
+
+
+
+                        FirebaseDatabase database=FirebaseDatabase.getInstance();
+                        DatabaseReference reference=database.getReference("Users");
+
+                        reference.child(uid).setValue(hashMap);
+
+
+
                         Toast.makeText(getApplicationContext(), "User Registered Successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), HomePage.class));
+
+                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                         finish();
                     } else {
                         Toast.makeText(getApplicationContext(), "Registration Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

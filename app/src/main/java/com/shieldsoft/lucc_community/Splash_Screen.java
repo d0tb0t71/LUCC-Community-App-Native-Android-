@@ -1,14 +1,25 @@
 package com.shieldsoft.lucc_community;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,10 +29,12 @@ import com.google.firebase.auth.FirebaseUser;
 public class Splash_Screen extends AppCompatActivity {
 
 
-    Animation topAnim,bottomAnim,left_to_right,right_to_left;
+    Animation topAnim, bottomAnim, left_to_right, right_to_left;
 
-    ImageView img2,splash_logo,img3,img4;
-    TextView community_app_tv,a_promise_to_lead_tv;
+    ImageView img2, splash_logo, img3, img4;
+    TextView community_app_tv, a_promise_to_lead_tv;
+
+
 
     FirebaseAuth mAuth;
 
@@ -38,22 +51,20 @@ public class Splash_Screen extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
-        mAuth= FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
-        topAnim= AnimationUtils.loadAnimation(this,R.anim.top_animation);
-        bottomAnim= AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
-        left_to_right=AnimationUtils.loadAnimation(this,R.anim.left_to_right);
-        right_to_left=AnimationUtils.loadAnimation(this,R.anim.right_to_left);
-
-
-        img2= findViewById(R.id.img2);
-        splash_logo= findViewById(R.id.splash_logo);
-        community_app_tv= findViewById(R.id.community_app_tv);
-        a_promise_to_lead_tv= findViewById(R.id.a_promise_to_lead_tv);
-        img3=findViewById(R.id.img3);
-        img4=findViewById(R.id.img4);
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
+        left_to_right = AnimationUtils.loadAnimation(this, R.anim.left_to_right);
+        right_to_left = AnimationUtils.loadAnimation(this, R.anim.right_to_left);
 
 
+        img2 = findViewById(R.id.img2);
+        splash_logo = findViewById(R.id.splash_logo);
+        community_app_tv = findViewById(R.id.community_app_tv);
+        a_promise_to_lead_tv = findViewById(R.id.a_promise_to_lead_tv);
+        img3 = findViewById(R.id.img3);
+        img4 = findViewById(R.id.img4);
 
 
         img2.setAnimation(topAnim);
@@ -62,10 +73,6 @@ public class Splash_Screen extends AppCompatActivity {
         a_promise_to_lead_tv.setAnimation(bottomAnim);
         img3.setAnimation(right_to_left);
         img4.setAnimation(left_to_right);
-
-
-
-
 
 
     }
@@ -77,31 +84,30 @@ public class Splash_Screen extends AppCompatActivity {
 
 
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
 
-                FirebaseUser user= mAuth.getCurrentUser();
-                if(user!=null){
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    FirebaseUser user = mAuth.getCurrentUser();
 
 
-                    startActivity(new Intent(getApplicationContext(),HomePage.class));
-                    finish();
+                    if (user != null) {
+
+
+                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                        finish();
+                    } else {
+
+
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
+                    }
                 }
-                else {
-
-
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    finish();
-                }
-            }
-        },1500);
-
-
+            }, 1500);
 
 
     }
-
 
 
 }

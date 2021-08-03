@@ -3,10 +3,18 @@ package com.shieldsoft.lucc_community;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -20,9 +28,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     Button mRegister_btn, mLogin_btn, sign_in_google;
@@ -40,16 +51,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
+
+
+
+
+
         mRegister_btn = findViewById(R.id.register_home_btn);
         mLogin_btn = findViewById(R.id.login_home_btn);
         sign_in_google = findViewById(R.id.sign_in_google);
 
         mAuth = FirebaseAuth.getInstance();
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Hello, WWWWWWWWWWWWWWWWWW!");
 
 
         mRegister_btn.setOnClickListener(new View.OnClickListener() {
@@ -142,10 +155,42 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
 
+                            FirebaseUser user=mAuth.getCurrentUser();
+
+                            if(task.getResult().getAdditionalUserInfo().isNewUser()){
+
+
+                                String email=user.getEmail();
+                                String uid= user.getUid();
+                                String image=user.getPhotoUrl().toString();
+
+
+                                HashMap<Object ,String> hashMap = new HashMap<>();
+
+                                hashMap.put("email",email);
+                                hashMap.put("uid",uid);
+                                hashMap.put("name","Unknown");
+                                hashMap.put("phone","+880**********");
+                                hashMap.put("image",image);
+                                hashMap.put("lu_id","********");
+                                hashMap.put("blood_group","No Info");
+                                hashMap.put("section","No Info");
+                                hashMap.put("batch","No Info");
+
+
+                                FirebaseDatabase database=FirebaseDatabase.getInstance();
+                                DatabaseReference reference=database.getReference("Users");
+
+                                reference.child(uid).setValue(hashMap);
+
+
+                            }
+
+
 
                             // Sign in success, update UI with the signed-in user's information
 
-                            startActivity(new Intent(getApplicationContext(),HomePage.class));
+                            startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                             finish();
 
 
