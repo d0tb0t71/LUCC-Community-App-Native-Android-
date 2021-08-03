@@ -66,6 +66,10 @@ public class DashboardActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), ContestArena.class));
                         overridePendingTransition(0, 0);
                         return true;
+                    case R.id.nav_users:
+                        startActivity(new Intent(getApplicationContext(), RegisteredUsers.class));
+                        overridePendingTransition(0, 0);
+                        return true;
 
                 }
 

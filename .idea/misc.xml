@@ -18,9 +18,12 @@
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_registered_users.xml" value="0.14" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/no_internet_alert_dialog.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/row_users.xml" value="0.67" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/menu/menu_nav.xml" value="0.25" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/menu/menu_registered_users.xml" value="0.16" />
       </map>
     </option>
   </component>
