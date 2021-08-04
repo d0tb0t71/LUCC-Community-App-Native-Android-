@@ -8,8 +8,11 @@
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/drawable-v24/lock_icon.xml" value="0.1" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/drawable-v24/recover_pass_icon.xml" value="0.1" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.175" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/drawable/no_internet_dialog_background.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/drawable/selector.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_chat.xml" value="0.2" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_chat_box.xml" value="0.2" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_contest_arena.xml" value="0.2" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_edit_profile.xml" value="0.25" />
@@ -20,6 +23,7 @@
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_registered_users.xml" value="0.14" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/fragment_chat_list.xml" value="0.22" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/no_internet_alert_dialog.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/row_users.xml" value="0.67" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/menu/menu_nav.xml" value="0.25" />

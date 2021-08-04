@@ -70,6 +70,10 @@ public class DashboardActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), RegisteredUsers.class));
                         overridePendingTransition(0, 0);
                         return true;
+                    case R.id.nav_chatbox:
+                        startActivity(new Intent(getApplicationContext(), ChatActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
 
                 }
 
