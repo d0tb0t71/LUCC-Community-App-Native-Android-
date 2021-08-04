@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_dashboard"
+        android:title="Dashboard"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        />
+    <item android:id="@+id/nav_contest"
+        android:title="ContestArena"
+        android:icon="@drawable/ic_baseline_computer_24"
+        />
+    <item android:id="@+id/nav_users"
+        android:title="User List"
+        android:icon="@drawable/ic_baseline_groups_24"
+        />
+
+    <item android:id="@+id/nav_chatbox"
+        android:title="ChatBox"
+        android:icon="@drawable/ic_baseline_chat_24"
+        />
+
+    <item android:id="@+id/nav_profile"
+        android:title="Profile"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        />
+
+
+
+
+
+
+</menu>

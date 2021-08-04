@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    tools:context=".EditProfile">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_text_background"
+                android:padding="10dp"
+                app:cardElevation="30dp">
+
+                <RelativeLayout
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center">
+
+
+                    <ImageView
+                        android:id="@+id/editImageIV"
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/single_profile_icon">
+
+                    </ImageView>
+
+                    <ImageButton
+                        android:id="@+id/editImgButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="#0C90D6"
+                        android:elevation="10dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_baseline_edit_24" />
+
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/editEmailTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Email"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="Name"
+                app:endIconMode="clear_text"
+                app:helperText="Required"
+                app:helperTextTextColor="#FF0000"
+                app:startIconDrawable="@drawable/ic_baseline_perm_identity_24"
+
+
+                >
+
+                <EditText
+                    android:id="@+id/editName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="LU ID"
+                app:endIconMode="clear_text"
+                app:helperText="Required"
+                app:helperTextTextColor="#FF0000"
+                app:startIconDrawable="@drawable/ic_baseline_verified_user_24"
+
+                >
+
+                <EditText
+                    android:id="@+id/editLuId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:inputType="text" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="Phone Number"
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="#FF0000"
+                app:startIconDrawable="@drawable/ic_baseline_phone_24"
+
+                >
+
+                <EditText
+                    android:id="@+id/editPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:inputType="text" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="Blood Group"
+                app:endIconMode="clear_text"
+                app:helperTextTextColor="#FF0000"
+                app:startIconDrawable="@drawable/ic_baseline_bloodtype_24"
+
+                >
+
+                <EditText
+                    android:id="@+id/editBloodGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:inputType="text" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="Batch"
+                app:endIconMode="clear_text"
+                app:helperText="Required"
+                app:helperTextTextColor="#FF0000"
+                app:startIconDrawable="@drawable/ic_baseline_groups_24"
+
+                >
+
+                <EditText
+                    android:id="@+id/editBatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:inputType="text" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="Section"
+                app:endIconMode="clear_text"
+                app:helperText="Required"
+                app:helperTextTextColor="#FF0000"
+                app:startIconDrawable="@drawable/user_icon"
+
+                >
+
+                <EditText
+                    android:id="@+id/editSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:inputType="text" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/save_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="SAVE"
+        android:drawableLeft="@drawable/ic_baseline_save_24"
+        />
+
+</RelativeLayout>
