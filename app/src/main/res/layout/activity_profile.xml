@@ -211,13 +211,12 @@
         />
 
 
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/design_default_color_primary_dark"
+        app:itemBackground="@color/white"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_nav"

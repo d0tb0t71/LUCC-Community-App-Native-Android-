@@ -43,51 +43,8 @@ public class RegisteredUsers extends AppCompatActivity {
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Registered Users");
 
-
-        bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.nav_users);
-
-
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId()) {
-
-                    case R.id.nav_dashboard:
-                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.nav_profile:
-                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.nav_contest:
-                        startActivity(new Intent(getApplicationContext(), ContestArena.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.nav_users:
-                        return true;
-                    case R.id.nav_chatbox:
-                        startActivity(new Intent(getApplicationContext(), ChatActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-
-                }
-
-                return false;
-            }
-        });
-
-
-
-
-
-
-
-
-
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
 
 
 

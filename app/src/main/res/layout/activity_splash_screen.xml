@@ -55,6 +55,13 @@
         android:fontFamily="@font/allerta_stencil"
         android:text="A Promise To Lead"
         android:textSize="20dp" />
+    <TextView
+        android:layout_below="@id/a_promise_to_lead_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="© ShieldSoft Ltd."
+        />
 
 
     <ImageView

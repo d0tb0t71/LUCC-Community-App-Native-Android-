@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/bottom_navigator"
         app:menu="@menu/menu_nav"
-        app:itemBackground="@color/design_default_color_primary_dark"
+        app:itemBackground="@color/white"
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
         android:layout_alignParentBottom="true"

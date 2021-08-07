@@ -46,8 +46,8 @@ public class ChatActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), ContestArena.class));
                         overridePendingTransition(0, 0);
                         return true;
-                    case R.id.nav_users:
-                        startActivity(new Intent(getApplicationContext(), RegisteredUsers.class));
+                    case R.id.nav_toolkit:
+                        startActivity(new Intent(getApplicationContext(), ToolKit.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.nav_dashboard:
@@ -61,5 +61,9 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
     }
 }

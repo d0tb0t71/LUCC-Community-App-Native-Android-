@@ -66,33 +66,19 @@ public class DashboardActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), ContestArena.class));
                         overridePendingTransition(0, 0);
                         return true;
-                    case R.id.nav_users:
-                        startActivity(new Intent(getApplicationContext(), RegisteredUsers.class));
+                    case R.id.nav_toolkit:
+                        startActivity(new Intent(getApplicationContext(), ToolKit.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.nav_chatbox:
                         startActivity(new Intent(getApplicationContext(), ChatActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
-
                 }
-
                 return false;
             }
         });
 
-
-        /*SharedPreferences preferences=getSharedPreferences("MyPrefs",MODE_PRIVATE);
-
-        String username=preferences.getString("username","");
-        String useremail=preferences.getString("useremail","");
-        String userphotoURL=preferences.getString("userPhoto","");
-
-
-
-        user_name.setText(username);
-        user_email.setText(useremail);
-        Glide.with(this).load(userphotoURL).into(user_photo);*/
 
 
         Sign_Out.setOnClickListener(v -> {

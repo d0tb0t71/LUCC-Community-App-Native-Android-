@@ -9,9 +9,9 @@
         android:title="ContestArena"
         android:icon="@drawable/ic_baseline_computer_24"
         />
-    <item android:id="@+id/nav_users"
-        android:title="User List"
-        android:icon="@drawable/ic_baseline_groups_24"
+    <item android:id="@+id/nav_toolkit"
+        android:title="ToolKit"
+        android:icon="@drawable/ic_baseline_apps_24"
         />
 
     <item android:id="@+id/nav_chatbox"
