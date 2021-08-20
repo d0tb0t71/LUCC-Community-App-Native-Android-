@@ -8,6 +8,8 @@
     tools:context=".LoginActivity">
 
 
+
+
     <TextView
         android:id="@+id/tt3"
         android:layout_width="wrap_content"
@@ -122,6 +124,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="Not Registered ? Register Now" />
+
 
 
 </RelativeLayout>

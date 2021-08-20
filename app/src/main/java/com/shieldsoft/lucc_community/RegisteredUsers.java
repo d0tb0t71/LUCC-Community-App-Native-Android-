@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,11 +36,15 @@ public class RegisteredUsers extends AppCompatActivity {
     List<ModelUsers> usersList;
 
     BottomNavigationView bottomNavigationView;
+    ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registered_users);
+
+
+        progressDialogShow();
 
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Registered Users");
@@ -207,6 +213,25 @@ public class RegisteredUsers extends AppCompatActivity {
         });
 
 
+    }
+
+    private void progressDialogShow() {
+        progress = new ProgressDialog(this);
+        progress.setTitle("User List Loading");
+        progress.setMessage("Please wait...");
+        progress.show();
+        progress.setCancelable(false);
+
+        Runnable progressRunnable = new Runnable() {
+
+            @Override
+            public void run() {
+                progress.cancel();
+            }
+        };
+
+        Handler pdCanceller = new Handler();
+        pdCanceller.postDelayed(progressRunnable, 1500);
     }
 
 

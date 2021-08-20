@@ -12,114 +12,116 @@
         android:layout_height="match_parent"
         >
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            >
+
+            <TextView
+                android:id="@+id/tt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#3397CB"
+                android:padding="5dp"
+                android:text="Register"
+                android:textAllCaps="true"
+                android:textSize="25dp" />
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/tt1"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/lu_lucc" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout_reg_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img1"
+                android:layout_margin="5dp"
+                android:hint="Email"
+                app:endIconMode="clear_text"
+                app:helperText="Required"
+                app:helperTextTextColor="#FF0000"
+                app:startIconDrawable="@drawable/user_icon"
+
+
+                >
+
+                <EditText
+                    android:id="@+id/emailEDT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/edit_text_background"
+                    android:inputType="textEmailAddress" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout_reg_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_input_layout_reg_email"
+                android:layout_margin="5dp"
+                android:hint="Password"
+                app:counterEnabled="true"
+                app:counterMaxLength="12"
+                app:endIconMode="password_toggle"
+                app:helperText="Required"
+                app:helperTextTextColor="#FF0000"
+                app:startIconDrawable="@drawable/lock_icon"
+
+
+                >
+
+                <EditText
+                    android:id="@+id/passEDT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/emailEDT"
+                    android:background="@drawable/edit_text_background"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/register_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_input_layout_reg_pass"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Register"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/login_now_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_btn"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Already Registered ? Login Now" />
+
+
+
+
+        </RelativeLayout>
+
+
 
 
     </ScrollView>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        >
-
-        <TextView
-            android:id="@+id/tt1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:background="#3397CB"
-            android:padding="5dp"
-            android:text="Register"
-            android:textAllCaps="true"
-            android:textSize="25dp" />
-
-        <ImageView
-            android:id="@+id/img1"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:layout_below="@+id/tt1"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/lu_lucc" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_input_layout_reg_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/img1"
-            android:layout_margin="5dp"
-            android:hint="Email"
-            app:endIconMode="clear_text"
-            app:helperText="Required"
-            app:helperTextTextColor="#FF0000"
-            app:startIconDrawable="@drawable/user_icon"
-
-
-            >
-
-            <EditText
-                android:id="@+id/emailEDT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:background="@drawable/edit_text_background"
-                android:inputType="textEmailAddress" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_input_layout_reg_pass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/text_input_layout_reg_email"
-            android:layout_margin="5dp"
-            android:hint="Password"
-            app:counterEnabled="true"
-            app:counterMaxLength="12"
-            app:endIconMode="password_toggle"
-            app:helperText="Required"
-            app:helperTextTextColor="#FF0000"
-            app:startIconDrawable="@drawable/lock_icon"
-
-
-            >
-
-            <EditText
-                android:id="@+id/passEDT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/emailEDT"
-                android:background="@drawable/edit_text_background"
-                android:inputType="textPassword" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <Button
-            android:id="@+id/register_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/text_input_layout_reg_pass"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="Register"
-            android:textSize="20dp" />
-
-        <Button
-            android:id="@+id/login_now_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="Already Registered ? Login Now" />
-
-
-
-
-    </RelativeLayout>
 
 
 </RelativeLayout>

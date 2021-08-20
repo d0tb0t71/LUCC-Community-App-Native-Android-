@@ -75,6 +75,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         Query query = databaseReference.orderByChild("email").equalTo(user.getEmail());
+
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -93,6 +94,7 @@ public class ProfileActivity extends AppCompatActivity {
                     String section = "" + ds.child("section").getValue();
                     String batch = "" + ds.child("batch").getValue();
                     String lu_id = "" + ds.child("lu_id").getValue();
+
 
                     //set data
                     nameTV.setText(name);
@@ -175,6 +177,7 @@ public class ProfileActivity extends AppCompatActivity {
         progress.setTitle("Data Loading");
         progress.setMessage("Please wait...");
         progress.show();
+        progress.setCancelable(false);
 
         Runnable progressRunnable = new Runnable() {
 

@@ -23,7 +23,7 @@
                 android:id="@+id/layout11"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@color/design_default_color_primary_dark"
+                android:background="#DC4D00"
                 >
 
 
@@ -35,11 +35,14 @@
 
                     >
 
+
+
                     <ImageView
                         android:id="@+id/avatarIV"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_marginLeft="10dp"
+                        android:elevation="10dp"
                         android:src="@drawable/ic_baseline_perm_identity_24"/>
 
 
@@ -201,14 +204,14 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="65dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/ic_baseline_edit_24"
-        />
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@id/bottom_navigator"
+
+        android:src="@drawable/ic_baseline_edit_24" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

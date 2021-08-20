@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,30 +10,37 @@
 
 
     <TextView
+        android:id="@+id/tvdb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DashBoard"
         android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+
         />
 
 
     <Button
+        android:layout_below="@id/tvdb"
         android:id="@+id/sign_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Out"
-        android:gravity="center"
         android:layout_centerHorizontal="true"
         />
 
-    <FrameLayout
-        android:id="@+id/content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
 
-
-    </FrameLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_post"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@id/bottom_navigator"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:maxImageSize="40dp"
+        />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -41,11 +48,11 @@
         android:id="@+id/bottom_navigator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/menu_nav"
+        android:layout_alignParentBottom="true"
         app:itemBackground="@color/white"
-        app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
-        >
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menu_nav">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
@@ -56,4 +63,4 @@
 
 
 
-</LinearLayout>
+</RelativeLayout>

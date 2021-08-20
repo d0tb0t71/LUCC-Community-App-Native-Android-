@@ -7,9 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,9 +29,11 @@ public class RegisterActivity extends AppCompatActivity {
     EditText mEmailEdt, mPassEdt;
     Button mRegisterBtn, mLoginBtn;
 
+
     FirebaseAuth mAuth;
 
     ProgressDialog progressDialog;
+    ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
         //edit box
         mEmailEdt = findViewById(R.id.emailEDT);
         mPassEdt = findViewById(R.id.passEDT);
+
 
 
         //button
@@ -70,6 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         });
 
+        //login button click
         mLoginBtn.setOnClickListener(v -> {
 
             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
@@ -105,6 +111,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                     if (task.isSuccessful()) {
 
+                        progressDialogShow();
+
 
                         FirebaseUser user=mAuth.getCurrentUser();
 
@@ -123,6 +131,8 @@ public class RegisterActivity extends AppCompatActivity {
                         hashMap.put("blood_group","No Info");
                         hashMap.put("section","No Info");
                         hashMap.put("batch","No Info");
+                        hashMap.put("onlineStatus","online");
+                        hashMap.put("typingTo","noOne");
 
 
 
@@ -133,11 +143,13 @@ public class RegisterActivity extends AppCompatActivity {
                         reference.child(uid).setValue(hashMap);
 
 
-
                         Toast.makeText(getApplicationContext(), "User Registered Successfully", Toast.LENGTH_SHORT).show();
+
 
                         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                         finish();
+
+
                     } else {
                         Toast.makeText(getApplicationContext(), "Registration Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
@@ -153,6 +165,23 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
+    private void progressDialogShow() {
+        progress = new ProgressDialog(this);
+        progress.setTitle("Registration in progress...");
+        progress.setMessage("Please wait...");
+        progress.show();
+        progress.setCancelable(false);
 
+        Runnable progressRunnable = new Runnable() {
+
+            @Override
+            public void run() {
+                progress.cancel();
+            }
+        };
+
+        Handler pdCanceller = new Handler();
+        pdCanceller.postDelayed(progressRunnable, 500);
+    }
 
 }
