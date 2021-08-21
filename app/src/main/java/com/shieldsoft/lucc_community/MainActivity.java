@@ -3,6 +3,7 @@ package com.shieldsoft.lucc_community;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -50,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        if(!isConnected(this)){
+            showInternetDialog();
+        }
 
 
 
@@ -136,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Toast.makeText(getApplicationContext(), "Authentication Failed !\n"+e, Toast.LENGTH_SHORT).show();
@@ -163,13 +168,14 @@ public class MainActivity extends AppCompatActivity {
                                 String email=user.getEmail();
                                 String uid= user.getUid();
                                 String image=user.getPhotoUrl().toString();
+                                String name=user.getDisplayName();
 
 
                                 HashMap<Object ,String> hashMap = new HashMap<>();
 
                                 hashMap.put("email",email);
                                 hashMap.put("uid",uid);
-                                hashMap.put("name","Unknown");
+                                hashMap.put("name",name);
                                 hashMap.put("phone","+880**********");
                                 hashMap.put("image",image);
                                 hashMap.put("lu_id","********");
@@ -202,6 +208,41 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void showInternetDialog() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+
+        View view= LayoutInflater.from(this).inflate(R.layout.no_internet_alert_dialog,findViewById(R.id.no_internet_layout));
+        view.findViewById(R.id.try_again).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!isConnected(MainActivity.this)){
+                    showInternetDialog();
+                }
+                else{
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                }
+            }
+        });
+        builder.setView(view);
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
+
+    private boolean isConnected(MainActivity mainActivity) {
+
+        ConnectivityManager connectivityManager= (ConnectivityManager) mainActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo wifiCon = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo mobileCon = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        return (wifiCon != null && wifiCon.isConnected() )|| (mobileCon != null && mobileCon.isConnected());
+
     }
 
 

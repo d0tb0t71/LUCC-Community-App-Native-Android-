@@ -20,14 +20,6 @@
         />
 
 
-    <Button
-        android:layout_below="@id/tvdb"
-        android:id="@+id/sign_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Out"
-        android:layout_centerHorizontal="true"
-        />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -1,8 +1,8 @@
 package com.shieldsoft.lucc_community;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,6 +15,9 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.text.Layout;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -48,6 +51,8 @@ public class Splash_Screen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
 
+
+
         getSupportActionBar().hide();
 
 
@@ -76,6 +81,9 @@ public class Splash_Screen extends AppCompatActivity {
 
 
     }
+
+
+
 
 
     @Override

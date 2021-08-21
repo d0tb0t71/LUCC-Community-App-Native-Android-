@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +14,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -27,7 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    Button Sign_Out;
+
 
 
     BottomNavigationView bottomNavigationView;
@@ -36,11 +39,14 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        if(!isConnected(this)){
+            showInternetDialog();
+        }
 
 
 
 
-        Sign_Out = findViewById(R.id.sign_out);
+
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Dashboard");
@@ -81,15 +87,42 @@ public class DashboardActivity extends AppCompatActivity {
 
 
 
-        Sign_Out.setOnClickListener(v -> {
-
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
 
 
+
+    }
+
+    private void showInternetDialog() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+
+        View view= LayoutInflater.from(this).inflate(R.layout.no_internet_alert_dialog,findViewById(R.id.no_internet_layout));
+        view.findViewById(R.id.try_again).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!isConnected(DashboardActivity.this)){
+                    showInternetDialog();
+                }
+                else{
+                    startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
+                }
+            }
         });
+        builder.setView(view);
 
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
+    private boolean isConnected(DashboardActivity dashboardActivity) {
+
+        ConnectivityManager connectivityManager= (ConnectivityManager) dashboardActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo wifiCon = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo mobileCon = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+        return (wifiCon != null && wifiCon.isConnected() )|| (mobileCon != null && mobileCon.isConnected());
 
     }
 

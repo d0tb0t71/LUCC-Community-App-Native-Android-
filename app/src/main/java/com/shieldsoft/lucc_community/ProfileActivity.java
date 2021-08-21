@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +42,7 @@ public class ProfileActivity extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
 
     ProgressDialog progress;
+    Button Sign_Out;
 
 
     @Override
@@ -72,6 +74,8 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         floatingActionButton = findViewById(R.id.fab);
+
+        Sign_Out = findViewById(R.id.sign_out);
 
 
         Query query = databaseReference.orderByChild("email").equalTo(user.getEmail());
@@ -165,6 +169,15 @@ public class ProfileActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(v -> {
 
             startActivity(new Intent(getApplicationContext(), EditProfile.class));
+
+
+        });
+
+        Sign_Out.setOnClickListener(v -> {
+
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
 
 
         });

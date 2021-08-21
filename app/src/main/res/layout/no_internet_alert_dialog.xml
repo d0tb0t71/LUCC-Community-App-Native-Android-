@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="@drawable/no_internet_dialog_background"
+    android:background="#efefef"
+    android:id="@+id/no_internet_layout"
     android:orientation="vertical">
 
     <ImageView
@@ -30,20 +31,13 @@
         android:layout_gravity="center"
         android:padding="20dp">
 
-        <Button
-            android:id="@+id/no_internet_cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Exit"
-            android:layout_margin="10dp"/>
 
         <Button
-            android:id="@+id/no_internet_connect"
+            android:id="@+id/try_again"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Connect"
+            android:text="Try Again"
             android:layout_margin="10dp"/>
 
 
