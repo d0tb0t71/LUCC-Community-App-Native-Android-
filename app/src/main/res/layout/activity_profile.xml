@@ -23,7 +23,7 @@
                 android:id="@+id/layout11"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="#DC4D00"
+                android:background="#016A6A"
                 >
 
 
@@ -196,8 +196,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:backgroundTint="#FF3A32"
                 android:layout_centerHorizontal="true"
                 android:text="Sign Out" />
+
 
 
         </LinearLayout>

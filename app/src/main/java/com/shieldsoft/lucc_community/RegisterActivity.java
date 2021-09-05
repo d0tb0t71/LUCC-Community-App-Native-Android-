@@ -82,7 +82,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         });
 
-
     }
 
     private void createUser() {

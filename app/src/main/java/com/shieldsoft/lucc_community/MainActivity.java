@@ -27,6 +27,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         if(!isConnected(this)){
             showInternetDialog();
         }
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         mRegister_btn = findViewById(R.id.register_home_btn);
         mLogin_btn = findViewById(R.id.login_home_btn);
         sign_in_google = findViewById(R.id.sign_in_google);
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -99,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
     private void requestGoogleSignIn() {
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+                //.requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
