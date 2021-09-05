@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196F3"
+    tools:context=".Splash_Screen">
+
+
+    <ImageView
+        android:id="@+id/img4"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/up_vector"
+        />
+
+
+    <ImageView
+        android:id="@+id/splash_logo"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_above="@+id/img2"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/splash_logo" />
+
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/lu_lucc" />
+
+    <TextView
+        android:id="@+id/community_app_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img2"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/bungee_shade"
+        android:text="Community App"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/a_promise_to_lead_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/img3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/allerta_stencil"
+        android:text="A Promise To Lead"
+        android:textSize="20dp" />
+    <TextView
+        android:layout_below="@id/a_promise_to_lead_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="© ShieldSoft Ltd."
+        />
+
+
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/down_vector" />
+
+
+
+
+
+
+
+
+</RelativeLayout>

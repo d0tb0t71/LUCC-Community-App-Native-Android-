@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/event_dialog"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/title_txt_aed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event Deatils"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/event_photo_add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_txt_aed"
+        android:layout_centerHorizontal="true"
+        android:text="Add Photo" />
+
+    <ImageView
+        android:id="@+id/event_banner_IV"
+        android:layout_width="262dp"
+        android:layout_height="127dp"
+        android:layout_below="@id/event_photo_add_btn"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_baseline_delete_forever_24"
+        android:visibility="gone" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_event_title"
+        android:layout_below="@id/event_banner_IV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="Event Title"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:helperText="Required"
+        app:helperTextTextColor="#FF0000"
+        >
+
+        <EditText
+            android:id="@+id/event_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_event_description"
+        android:layout_below="@id/text_input_layout_event_title"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="5dp"
+        android:hint="Event Description"
+        app:counterEnabled="true"
+        app:helperText="Required"
+        app:helperTextTextColor="#FF0000"
+        >
+
+        <EditText
+            android:id="@+id/event_description"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/edit_text_background"
+            android:inputType="textMultiLine" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+
+        android:layout_below="@id/text_input_layout_event_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        >
+
+        <Button
+            android:id="@+id/ev_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginRight="20dp"
+            />
+        <Button
+            android:id="@+id/ev_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:layout_marginLeft="20dp"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>
