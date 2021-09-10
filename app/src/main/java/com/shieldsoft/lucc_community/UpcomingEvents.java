@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -86,6 +87,7 @@ public class UpcomingEvents extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Upcoming Events");
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
 
 
@@ -374,5 +376,13 @@ public class UpcomingEvents extends AppCompatActivity {
                 }
             });
 
+
+    @Override
+    public void onBackPressed() {
+
+        startActivity(new Intent(getApplicationContext(),ToolKit.class));
+
+        super.onBackPressed();
+    }
 }
 

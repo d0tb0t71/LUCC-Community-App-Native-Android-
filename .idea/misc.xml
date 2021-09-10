@@ -20,6 +20,7 @@
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_browse_url.xml" value="0.30648148148148147" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_chat.xml" value="0.18" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_chat_box.xml" value="0.25" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_contest.xml" value="0.33" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_contest_arena.xml" value="0.14" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_dashboard.xml" value="0.30648148148148147" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_edit_profile.xml" value="0.25" />
@@ -40,6 +41,8 @@
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/fragment_chat_list.xml" value="0.22" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/fragment_first.xml" value="0.30648148148148147" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/fragment_second.xml" value="0.30648148148148147" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/individual_contest.xml" value="0.33" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/my_layout.xml" value="0.22" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/no_internet_alert_dialog.xml" value="0.25" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/row_chat_left.xml" value="0.25" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/row_chat_right.xml" value="0.34479166666666666" />

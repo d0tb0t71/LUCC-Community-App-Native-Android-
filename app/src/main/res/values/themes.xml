@@ -3,7 +3,7 @@
     <style name="Theme.LUCC_Community" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#016A6A</item>
-        <item name="colorPrimaryVariant">#FF018786</item>
+        <item name="colorPrimaryVariant">#018786</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

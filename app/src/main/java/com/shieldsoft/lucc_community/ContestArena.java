@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.shieldsoft.lucc_community.adapters.MyAdapter;
 
 public class ContestArena extends AppCompatActivity {
 
@@ -44,7 +45,7 @@ public class ContestArena extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, arr[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(ContestArena.this, arr[position], Toast.LENGTH_SHORT).show();
                 intent.putExtra(NAME_KEY,arr[position]);
                 startActivity(intent);
             }

@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LUCC_Community">
         <activity
+            android:name=".ContestActivity"
+            android:exported="true" />
+        <activity
             android:name=".UpcomingEvents"
             android:exported="true" />
         <activity
@@ -42,7 +45,7 @@
             android:exported="true" />
         <activity
             android:name=".ProfileActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Splash_Screen"
             android:exported="true">
