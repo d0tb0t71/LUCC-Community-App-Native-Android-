@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/post_dialog"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/post_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Add Post to LUCC Community"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:background="#efefef"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/post_photo_add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/post_title"
+        android:layout_centerHorizontal="true"
+        android:text="Add Photo" />
+
+    <ImageView
+        android:id="@+id/post_banner_IV"
+        android:layout_width="262dp"
+        android:layout_height="127dp"
+        android:layout_below="@id/post_photo_add_btn"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_baseline_delete_forever_24"
+        android:visibility="gone" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_post_dwoym"
+        android:layout_below="@id/post_banner_IV"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="5dp"
+        android:hint="What's on your name ?"
+        app:counterEnabled="true"
+        app:helperText="Required"
+        app:helperTextTextColor="#FF0000"
+        >
+
+        <EditText
+            android:id="@+id/woym"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/edit_text_background"
+            android:inputType="textMultiLine" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <LinearLayout
+
+        android:layout_below="@id/text_input_layout_post_dwoym"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        >
+        <Button
+            android:id="@+id/post_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCEL"
+            android:layout_marginLeft="20dp"
+            />
+
+        <Button
+            android:id="@+id/post_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POST NOW"
+            android:layout_marginLeft="20dp"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>
