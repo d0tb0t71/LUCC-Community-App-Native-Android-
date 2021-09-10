@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -26,9 +27,8 @@ import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText mEmailEdt, mPassEdt;
+    EditText mEmailEdt, mPassEdt,mNameEdt;
     Button mRegisterBtn, mLoginBtn;
-
 
     FirebaseAuth mAuth;
 
@@ -49,6 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         //edit box
+        mNameEdt=findViewById(R.id.nameEDT);
         mEmailEdt = findViewById(R.id.emailEDT);
         mPassEdt = findViewById(R.id.passEDT);
 
@@ -88,6 +89,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         String email = mEmailEdt.getText().toString();
         String password = mPassEdt.getText().toString();
+        String name = mNameEdt.getText().toString();
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
 
@@ -99,7 +101,14 @@ public class RegisterActivity extends AppCompatActivity {
             mPassEdt.setError("Password length must be above 6 character");
             mPassEdt.setFocusable(true);
 
-        } else {
+        }
+        else if (name.length()< 3) {
+
+            mPassEdt.setError("Enter Valid Name");
+            mPassEdt.setFocusable(true);
+
+        }
+        else {
 
             //registering
 
@@ -123,7 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                         hashMap.put("email",email);
                         hashMap.put("uid",uid);
-                        hashMap.put("name","Unknown");
+                        hashMap.put("name",name);
                         hashMap.put("phone","+880**********");
                         hashMap.put("image","");
                         hashMap.put("lu_id","********");
@@ -182,5 +191,6 @@ public class RegisterActivity extends AppCompatActivity {
         Handler pdCanceller = new Handler();
         pdCanceller.postDelayed(progressRunnable, 500);
     }
+
 
 }

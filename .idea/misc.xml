@@ -20,7 +20,7 @@
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_browse_url.xml" value="0.30648148148148147" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_chat.xml" value="0.18" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_chat_box.xml" value="0.25" />
-        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_contest_arena.xml" value="0.25" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_contest_arena.xml" value="0.14" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_dashboard.xml" value="0.30648148148148147" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_edit_profile.xml" value="0.25" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_home_page.xml" value="0.25925925925925924" />
@@ -31,8 +31,10 @@
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_registered_users.xml" value="0.14" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_tool_kit.xml" value="0.33" />
-        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_upcoming_events.xml" value="0.34479166666666666" />
-        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/add_event_dialog.xml" value="0.33" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/activity_upcoming_events.xml" value="0.22" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/add_event_dialog.xml" value="0.25" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/add_post.xml" value="0.33897435897435896" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/add_post_dialog.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/content_chat_box.xml" value="0.30648148148148147" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/event_list_single_view.xml" value="0.33" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/fragment_chat_list.xml" value="0.22" />
@@ -41,6 +43,7 @@
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/no_internet_alert_dialog.xml" value="0.25" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/row_chat_left.xml" value="0.25" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/row_chat_right.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/row_post.xml" value="0.33" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/layout/row_users.xml" value="0.25" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/menu/eventaddbutton.xml" value="0.33" />
         <entry key="..\:/Users/Dipon SutraDhar/AndroidStudioProjects/LUCC_Community/app/src/main/res/menu/menu_nav.xml" value="0.25" />

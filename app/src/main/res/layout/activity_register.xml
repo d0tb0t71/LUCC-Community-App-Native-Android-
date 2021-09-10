@@ -39,16 +39,43 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_input_layout_reg_email"
+                android:id="@+id/text_input_layout_reg_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/img1"
+                android:layout_margin="5dp"
+                android:hint="Name"
+                app:endIconMode="clear_text"
+                app:helperText="Required"
+                app:helperTextTextColor="#FF0000"
+                app:startIconDrawable="@drawable/user_icon"
+
+
+                >
+
+                <EditText
+                    android:id="@+id/nameEDT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/edit_text_background"
+                    android:inputType="textEmailAddress" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout_reg_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_input_layout_reg_name"
                 android:layout_margin="5dp"
                 android:hint="Email"
                 app:endIconMode="clear_text"
                 app:helperText="Required"
                 app:helperTextTextColor="#FF0000"
-                app:startIconDrawable="@drawable/user_icon"
+                app:startIconDrawable="@drawable/ic_baseline_email_24"
 
 
                 >
