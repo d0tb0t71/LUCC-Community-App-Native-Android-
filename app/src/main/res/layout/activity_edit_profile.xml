@@ -17,7 +17,6 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -30,7 +29,6 @@
                     android:layout_width="250dp"
                     android:layout_height="250dp"
                     android:layout_gravity="center">
-
 
                     <ImageView
                         android:id="@+id/editImageIV"
@@ -70,7 +68,7 @@
                 android:layout_gravity="center"
                 android:text="Email"
                 android:textSize="15sp"
-                android:textStyle="bold|italic"/>
+                android:textStyle="bold|italic" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -81,8 +79,6 @@
                 app:helperText="Required"
                 app:helperTextTextColor="#FF0000"
                 app:startIconDrawable="@drawable/ic_baseline_perm_identity_24"
-
-
                 >
 
                 <EditText
@@ -104,7 +100,6 @@
                 app:helperText="Required"
                 app:helperTextTextColor="#FF0000"
                 app:startIconDrawable="@drawable/ic_baseline_verified_user_24"
-
                 >
 
                 <EditText
@@ -112,7 +107,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_background"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -125,7 +120,6 @@
                 app:endIconMode="clear_text"
                 app:helperTextTextColor="#FF0000"
                 app:startIconDrawable="@drawable/ic_baseline_phone_24"
-
                 >
 
                 <EditText
@@ -133,7 +127,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_background"
-                    android:inputType="text" />
+                    android:inputType="phone" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -147,7 +141,6 @@
                 app:endIconMode="clear_text"
                 app:helperTextTextColor="#FF0000"
                 app:startIconDrawable="@drawable/ic_baseline_bloodtype_24"
-
                 >
 
                 <EditText
@@ -169,7 +162,6 @@
                 app:helperText="Required"
                 app:helperTextTextColor="#FF0000"
                 app:startIconDrawable="@drawable/ic_baseline_groups_24"
-
                 >
 
                 <EditText
@@ -177,7 +169,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_background"
-                    android:inputType="text" />
+                    android:inputType="numberDecimal" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -191,7 +183,6 @@
                 app:helperText="Required"
                 app:helperTextTextColor="#FF0000"
                 app:startIconDrawable="@drawable/user_icon"
-
                 >
 
                 <EditText

@@ -1,5 +1,6 @@
 package com.shieldsoft.lucc_community.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +37,7 @@ public class AdapterEvents extends RecyclerView.Adapter<AdapterEvents.MyViewHold
         return new MyViewHolder(v);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
@@ -50,8 +52,6 @@ public class AdapterEvents extends RecyclerView.Adapter<AdapterEvents.MyViewHold
         holder.delete_events.setOnClickListener(v-> {
 
             Toast.makeText(context, "Clicked on :" + modelEvents.getEventTitle(), Toast.LENGTH_SHORT).show();
-
-
 
         });
 

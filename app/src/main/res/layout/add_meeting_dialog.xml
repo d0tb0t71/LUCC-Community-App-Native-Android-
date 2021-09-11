@@ -3,41 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/event_dialog"
+    android:id="@+id/meeting_dialog"
     android:padding="10dp">
 
     <TextView
         android:id="@+id/title_txt_aed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Event Deatils"
+        android:text="Meeting Deatils"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:textSize="20dp"
         android:textColor="@color/black"
         />
 
-    <Button
-        android:id="@+id/event_photo_add_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title_txt_aed"
-        android:layout_centerHorizontal="true"
-        android:text="Add Photo" />
-
-    <ImageView
-        android:id="@+id/event_banner_IV"
-        android:layout_width="262dp"
-        android:layout_height="127dp"
-        android:layout_below="@id/event_photo_add_btn"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_baseline_delete_forever_24"
-        android:visibility="gone" />
 
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_layout_event_title"
-        android:layout_below="@id/event_banner_IV"
+        android:layout_below="@id/title_txt_aed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -49,7 +33,7 @@
         >
 
         <EditText
-            android:id="@+id/event_title"
+            android:id="@+id/meeting_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_background"
@@ -70,12 +54,12 @@
         >
 
         <EditText
-            android:id="@+id/event_description"
+            android:id="@+id/meeting_description"
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:background="@drawable/edit_text_background"
             android:inputType="textMultiLine" />
-        
+
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -94,7 +78,7 @@
         >
 
         <EditText
-            android:id="@+id/event_location"
+            android:id="@+id/meeting_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_background"
@@ -115,7 +99,7 @@
         android:weightSum="2">
 
         <TextView
-            android:id="@+id/choose_time_event"
+            android:id="@+id/choose_time_meeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -126,7 +110,7 @@
             android:textColor="@color/black" />
 
         <TextView
-            android:id="@+id/choose_date_event"
+            android:id="@+id/choose_date_meeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -135,16 +119,10 @@
             android:text="Choose Date"
             android:textAlignment="center"
             android:textColor="@color/black" />
-
-
     </LinearLayout>
 
 
-
-
-
     <LinearLayout
-
         android:layout_below="@id/picker_event_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -152,14 +130,14 @@
         >
 
         <Button
-            android:id="@+id/ev_cancel"
+            android:id="@+id/m_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"
             android:layout_marginRight="20dp"
             />
         <Button
-            android:id="@+id/ev_update"
+            android:id="@+id/m_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add"

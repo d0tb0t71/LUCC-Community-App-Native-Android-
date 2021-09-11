@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LUCC_Community">
         <activity
+            android:name=".UpcomingMeetings"
+            android:exported="true" />
+        <activity
             android:name=".ContestActivity"
             android:exported="true" />
         <activity

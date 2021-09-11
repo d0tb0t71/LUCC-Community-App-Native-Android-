@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -80,6 +81,7 @@ public class EditProfile extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Edit Profile");
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
 
 
@@ -313,8 +315,19 @@ public class EditProfile extends AppCompatActivity {
             });
 
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
 
+        switch(item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
 
 
+        return super.onOptionsItemSelected(item);
+
+
+    }
 }

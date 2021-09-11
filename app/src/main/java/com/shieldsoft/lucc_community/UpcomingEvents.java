@@ -79,7 +79,6 @@ public class UpcomingEvents extends AppCompatActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,7 +93,13 @@ public class UpcomingEvents extends AppCompatActivity {
         recyclerView=findViewById(R.id.event_list_recycler_view);
         databaseReference=FirebaseDatabase.getInstance().getReference("Events");
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(UpcomingEvents.this);
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(layoutManager);
+
 
         list = new ArrayList<>();
         adapterEvents= new AdapterEvents(this,list);
@@ -106,10 +111,8 @@ public class UpcomingEvents extends AppCompatActivity {
 
                 for (DataSnapshot dataSnapshot: snapshot.getChildren())
                 {
-
                     ModelEvents modelEvents = dataSnapshot.getValue(ModelEvents.class);
                     list.add(modelEvents);
-
                 }
 
                 adapterEvents.notifyDataSetChanged();
@@ -145,6 +148,9 @@ public class UpcomingEvents extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.add_event_btn:
                 showEventAddDialog();
+            case android.R.id.home:
+                onBackPressed();
+                return true;
         }
 
 
@@ -272,9 +278,10 @@ public class UpcomingEvents extends AppCompatActivity {
 
                 reference.push().setValue(hashMap);
 
-                Toast.makeText(getApplicationContext(), "Event Updated Successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Event Added Successfully", Toast.LENGTH_SHORT).show();
 
                 alertDialog.dismiss();
+                recreate();
 
 
             }
@@ -377,12 +384,5 @@ public class UpcomingEvents extends AppCompatActivity {
             });
 
 
-    @Override
-    public void onBackPressed() {
-
-        startActivity(new Intent(getApplicationContext(),ToolKit.class));
-
-        super.onBackPressed();
-    }
 }
 

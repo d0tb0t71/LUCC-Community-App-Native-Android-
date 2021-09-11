@@ -13,7 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class ToolKit extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    ImageButton reg_users,dev_tips,cp_tips,upcoming_events;
+    ImageButton reg_users,dev_tips,cp_tips,upcoming_events,upcoming_meetings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +29,12 @@ public class ToolKit extends AppCompatActivity {
         dev_tips=findViewById(R.id.dev_tips);
         cp_tips=findViewById(R.id.cp_tips);
         upcoming_events=findViewById(R.id.upcoming_events);
+        upcoming_meetings=findViewById(R.id.upcoming_meetings);
 
 
         upcoming_events.setOnClickListener(v-> {
 
             startActivity(new Intent(getApplicationContext(),UpcomingEvents.class));
-            finish();
-
-
-
 
         });
 
@@ -66,8 +63,15 @@ public class ToolKit extends AppCompatActivity {
             intent.putExtra("url","https://blog.codingblocks.com/2019/start-with-competitive-programming/");
             startActivity(intent);
 
+        });
+
+        upcoming_meetings.setOnClickListener(v->
+        {
+            startActivity(new Intent(getApplicationContext(),UpcomingMeetings.class));
 
         });
+
+
 
 
 
