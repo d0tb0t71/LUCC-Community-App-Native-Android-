@@ -16,13 +16,17 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,11 +39,15 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.shieldsoft.lucc_community.adapters.AdapterEvents;
 import com.shieldsoft.lucc_community.adapters.AdapterPost;
+import com.shieldsoft.lucc_community.adapters.AdapterUsers;
 import com.shieldsoft.lucc_community.models.ModelEvents;
 import com.shieldsoft.lucc_community.models.ModelPost;
+import com.shieldsoft.lucc_community.models.ModelUsers;
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -61,6 +69,8 @@ public class DashboardActivity extends AppCompatActivity {
     ArrayList<ModelPost> list;
     AdapterPost adapterPost;
     DatabaseReference databaseReference;
+    String  authorName ="";
+    String imageUrl="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,27 +107,8 @@ public class DashboardActivity extends AppCompatActivity {
         adapterPost= new AdapterPost(this,list);
         recyclerView.setAdapter(adapterPost);
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                for (DataSnapshot dataSnapshot: snapshot.getChildren())
-                {
-
-                    ModelPost modelPost = dataSnapshot.getValue(ModelPost.class);
-                    list.add(modelPost);
-
-                }
-
-                adapterPost.notifyDataSetChanged();
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+        getAllPost();
 
 
 
@@ -133,6 +124,32 @@ public class DashboardActivity extends AppCompatActivity {
                 post_now=view.findViewById(R.id.post_now);
                 woym=view.findViewById(R.id.woym);
 
+                FirebaseAuth mAuth= FirebaseAuth.getInstance();
+                FirebaseUser user=mAuth.getCurrentUser();
+
+                DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("Users");
+
+                Query query = databaseReference.orderByChild("email").equalTo(user.getEmail());
+
+                query.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        //check until required data get
+                        for (DataSnapshot ds : snapshot.getChildren()) {
+                            authorName = ""+ds.child("name").getValue();
+                            imageUrl = ""+ds.child("image").getValue();
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
 
 
 
@@ -146,18 +163,18 @@ public class DashboardActivity extends AppCompatActivity {
 
                 post_now.setOnClickListener(v1-> {
 
-                    FirebaseAuth mAuth= FirebaseAuth.getInstance();
-                    FirebaseUser user=mAuth.getCurrentUser();
-
                     String woym_t = woym.getText().toString();
+
+
 
 
                     if(!woym_t.equals("")){
 
+
+
                         HashMap<Object ,String> hashMap = new HashMap<>();
 
                         String authorID=user.getUid();
-                        String authorName = user.getDisplayName();
                         String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
                         String currentTime = new SimpleDateFormat("HH:mm a", Locale.getDefault()).format(new Date());
 
@@ -167,10 +184,9 @@ public class DashboardActivity extends AppCompatActivity {
                         hashMap.put("authorName",authorName);
                         hashMap.put("authorID",authorID);
                         hashMap.put("postTime",currentTime+" "+currentDate);
-
+                        hashMap.put("imageUrl",imageUrl);
 
                         //hashMap.put("eventBanner",pic_url);
-
 
                         FirebaseDatabase database=FirebaseDatabase.getInstance();
                         DatabaseReference reference=database.getReference("Posts");
@@ -229,10 +245,6 @@ public class DashboardActivity extends AppCompatActivity {
         });
 
 
-
-
-
-
     }
 
     private void showInternetDialog() {
@@ -269,6 +281,123 @@ public class DashboardActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_registered_users,menu);
+
+
+
+        SearchView searchView=(SearchView) menu.findItem(R.id.user_search).getActionView();
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+
+                if(!TextUtils.isEmpty(query.trim())){
+
+                    searchPost(query);
+                }else
+                {
+                    getAllPost();
+                }
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+
+
+                if(!TextUtils.isEmpty(newText.trim())){
+
+                    searchPost(newText);
+                }else
+                {
+                    getAllPost();
+                }
+
+
+                return false;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    private void getAllPost() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for (DataSnapshot dataSnapshot: snapshot.getChildren())
+                {
+
+                    ModelPost modelPost = dataSnapshot.getValue(ModelPost.class);
+                    list.add(modelPost);
+
+                }
+
+                adapterPost.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void searchPost(String query) {
+
+
+        FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Posts");
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                list.clear();
+
+                for(DataSnapshot ds:snapshot.getChildren()){
+
+                    ModelPost modelPost=ds.getValue(ModelPost.class);
+
+
+                        if((modelPost.getAuthorName().toLowerCase().contains((query.toLowerCase())))
+                                || modelPost.getWoym().toLowerCase().contains((query.toLowerCase()))
+                                || modelPost.getPostTime().toLowerCase().contains((query.toLowerCase()))){
+                            list.add(modelPost);
+                        }
+
+
+
+
+                    adapterPost=new AdapterPost(getApplicationContext(),list);
+
+                    adapterPost.notifyDataSetChanged();
+
+                    recyclerView.setAdapter(adapterPost);
+
+
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
 
     @Override
     public void onBackPressed() {

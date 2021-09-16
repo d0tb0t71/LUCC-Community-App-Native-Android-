@@ -148,9 +148,6 @@ public class UpcomingEvents extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.add_event_btn:
                 showEventAddDialog();
-            case android.R.id.home:
-                onBackPressed();
-                return true;
         }
 
 
@@ -250,15 +247,11 @@ public class UpcomingEvents extends AppCompatActivity {
 
                 HashMap<Object ,String> hashMap = new HashMap<>();
 
-
                 String authorID=user.getUid();
                 String authorName = user.getDisplayName();
 
 
-
-
                 System.out.println(authorName +"======================================");
-
 
 
                 hashMap.put("eventTitle",eventTitle);
@@ -280,8 +273,7 @@ public class UpcomingEvents extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), "Event Added Successfully", Toast.LENGTH_SHORT).show();
 
-                alertDialog.dismiss();
-                recreate();
+
 
 
             }
@@ -302,8 +294,10 @@ public class UpcomingEvents extends AppCompatActivity {
                 if(eventLocation.equals("")){
                     event_location.setError("Enter correct Location");
                 }
-
             }
+
+            alertDialog.dismiss();
+            recreate();
 
 
         });
@@ -382,7 +376,5 @@ public class UpcomingEvents extends AppCompatActivity {
 
                 }
             });
-
-
 }
 

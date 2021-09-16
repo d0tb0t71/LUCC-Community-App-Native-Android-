@@ -12,7 +12,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.shieldsoft.lucc_community.DashboardActivity;
 import com.shieldsoft.lucc_community.R;
+import com.shieldsoft.lucc_community.UpcomingMeetings;
 import com.shieldsoft.lucc_community.models.ModelMeetings;
 
 import java.util.ArrayList;
@@ -21,10 +29,12 @@ public class AdapterMeetings extends RecyclerView.Adapter<AdapterMeetings.MyView
 
     Context context;
     ArrayList<ModelMeetings> list;
+    String myUid;
 
     public AdapterMeetings(Context context, ArrayList<ModelMeetings> list) {
         this.context = context;
         this.list = list;
+        myUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 
     @NonNull
@@ -46,13 +56,42 @@ public class AdapterMeetings extends RecyclerView.Adapter<AdapterMeetings.MyView
         holder.time_tv_meeting.setText("Time : "+modelMeetings.getMeetingTime());
         holder.date_tv_meeting.setText("Date : "+modelMeetings.getMeetingTitle());
         holder.location_tv_meeting.setText("Location : "+modelMeetings.getMeetingLocation());
+        String pId=modelMeetings.getAuthorID();
+
+        if(pId.equals(myUid)){
+            holder.delete_meeting.setVisibility(View.VISIBLE);
+        }
+        else{
+            holder.delete_meeting.setVisibility(View.GONE);
+        }
 
         holder.delete_meeting.setOnClickListener(v -> {
 
-            Toast.makeText(v.getContext(), "Clicked on : "+modelMeetings.getMeetingTitle(), Toast.LENGTH_SHORT).show();
+           beginDelete(pId);
 
         });
 
+    }
+    private void beginDelete(String pId) {
+
+        Query query = FirebaseDatabase.getInstance().getReference("Meetings").orderByChild("authorID").equalTo(pId);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot: snapshot.getChildren())
+                {
+                    dataSnapshot.getRef().removeValue();
+                    Toast.makeText(context.getApplicationContext(), "Deleted Successfully", Toast.LENGTH_SHORT).show();
+                    ((UpcomingMeetings)context).recreate();
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+
+        });
     }
 
     @Override

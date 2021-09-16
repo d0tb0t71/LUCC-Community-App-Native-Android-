@@ -117,9 +117,6 @@ public class UpcomingMeetings extends AppCompatActivity {
 
             case R.id.add_meeting:
                 showMeetingAddDialog();
-            case android.R.id.home:
-                onBackPressed();
-                return true;
         }
 
         return super.onOptionsItemSelected(item);
